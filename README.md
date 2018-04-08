@@ -5,9 +5,12 @@ FlientHtmlBuilder is a simple library to build HTML documents with C# code using
 
 ## Sample usage
 
-You can find example usage in the Marcinkiewicz.FluentHtmlBuilder.Examples folder.
+You can find more comprehensive example here:
+https://github.com/marcinkiewicz/fluentHtmlBuilder/blob/master/Marcinkiewicz.FluentHtmlBuilder.Examples/BasicHtml.cs
 
-1. Defining and mergin styles
+####Simple scenarios
+
+1. Defining and merging styles
 
 ```csharp
 // Define header style
@@ -68,9 +71,10 @@ In result we will get following text:
 ```
 
 
-## Creating new tag
+## Custom tags
 Currently there is only a small subset of HTML tags supported. Nevertheless extensibility of the library provides easy way to create own tags.
 
+#### Creating custom tag
 As example we will create <mat-icon></mat-icon> tag with custom property color.
 
 
@@ -94,3 +98,14 @@ class NewElement : HtmlContainerElement
 }
     
 ```
+
+#### Using custom tag
+Custom tag can be attached to any element that derives from *HtmlElement*.
+  
+```csharp
+HtmlDocument document = new HtmlDocument();
+document.AddChild(new NewElement(styles));
+    
+```
+
+document.AddChild(new HtmlHead(styles));
