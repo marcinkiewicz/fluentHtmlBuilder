@@ -8,7 +8,7 @@ FlientHtmlBuilder is a simple library to build HTML documents with C# code using
 You can find more comprehensive example here:
 https://github.com/marcinkiewicz/fluentHtmlBuilder/blob/master/Marcinkiewicz.FluentHtmlBuilder.Examples/BasicHtml.cs
 
-####Simple scenarios
+#### Simple scenarios
 
 1. Defining and merging styles
 
@@ -107,5 +107,3 @@ HtmlDocument document = new HtmlDocument();
 document.AddChild(new NewElement(styles));
     
 ```
-
-document.AddChild(new HtmlHead(styles));
