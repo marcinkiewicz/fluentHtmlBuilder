@@ -24,7 +24,7 @@ namespace Marcinkiewicz.FluentHtmlBuilder
             // Prevent adding the same style twice
             if (this.Values.ContainsKey(name))
             {
-                throw new ArgumentException("Style with this key already defined");
+                throw new ArgumentException($"Style with {name} key already defined");
             }
 
             this.Values.Add(name, value);
@@ -47,10 +47,14 @@ namespace Marcinkiewicz.FluentHtmlBuilder
 
             foreach (var style in styles.Values)
             {
-                if (!this.Values.ContainsKey(style.Key) && overrideWhenConflict)
+                if (this.Values.ContainsKey(style.Key))
                 {
-                    // Override existing style
-                    this.Values[style.Key] = style.Value;
+                    if (overrideWhenConflict)
+                    {
+                        // Override existing style
+                        this.Values[style.Key] = style.Value;
+                    }
+                    // Otherwise leave current value
                 }
                 else
                 {

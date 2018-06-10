@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /Marcinkiewicz.FluentHtmlBuilder/stylecop.json
 /Marcinkiewicz.FluentHtmlBuilder/Marcinkiewicz.FluentHtmlBuilder.ruleset
+/Marcinkiewicz.FluentHtmlBuilder/NugetPublishCommand.txt
